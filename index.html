@@ -1,349 +1,351 @@
----
-layout: default
-title: Home
----
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunny Side Up Co. | Pragmatic Web Development</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    @keyframes float {
+      0% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+      100% { transform: translate(0px, 0px) scale(1); }
+    }
+    .animate-float-slow { animation: float 20s ease-in-out infinite; }
+    .animate-float-medium { animation: float 15s ease-in-out infinite reverse; }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .font-serif { font-family: 'Playfair Display', serif; }
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(40px) scale(0.96);
+      filter: blur(4px);
+      transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.8s ease-out;
+      will-change: opacity, transform, filter;
+    }
+    .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    .delay-100 { transition-delay: 0.1s; animation-delay: 0.1s; }
+    .delay-200 { transition-delay: 0.2s; animation-delay: 0.2s; }
+    .delay-300 { transition-delay: 0.3s; animation-delay: 0.3s; }
+    @keyframes float-showcase {
+      0%, 100% { transform: translate(0, 0); }
+      33% { transform: translate(10px, -15px); }
+      66% { transform: translate(-5px, 10px); }
+    }
+    .animate-float-showcase { animation: float-showcase 10s ease-in-out infinite; }
+  </style>
+</head>
+<body class="bg-white text-gray-900 selection:bg-amber-200 selection:text-amber-900">
+  
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-transparent">
+    <div class="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex-shrink-0">
+        <a href="#" class="text-xl font-semibold tracking-tight text-black flex items-center gap-2">
+          <i data-lucide="egg-fried" class="w-6 h-6 text-amber-500"></i>
+          Sunny Side Up Co.
+        </a>
+      </div>
+      <div class="hidden md:flex items-center gap-10">
+        <a href="#" class="text-base font-medium text-gray-600 hover:text-amber-600 transition-colors">Philosophy</a>
+        <a href="#" class="text-base font-medium text-gray-600 hover:text-amber-600 transition-colors">Work</a>
+        <a href="#" class="text-base font-medium text-gray-600 hover:text-amber-600 transition-colors">Integrations</a>
+        <a href="#" class="text-base font-medium text-gray-600 hover:text-amber-600 transition-colors">Contact</a>
+      </div>
+      <div class="flex items-center gap-5">
+        <button class="bg-black text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors">
+          Start a Project
+        </button>
+      </div>
+    </div>
+  </nav>
 
-  <section class="relative pt-40 pb-20 bg-gray-50 overflow-hidden min-h-[70vh] flex items-center">
-    <div class="absolute inset-0 bg-white/90 z-0"></div>
+  <main class="sm:px-6 max-w-[1440px] mr-auto ml-auto pr-4 pb-20 pl-4">
     
-    <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-      <div class="text-center max-w-4xl mx-auto">
-        <div class="inline-block bg-black text-white text-xs font-bold tracking-widest uppercase px-4 py-1 mb-8 animate-fade-in-up">
-          EST. 2024
+    <div class="relative w-full rounded-[40px] sm:rounded-[60px] h-[700px] sm:h-[640px] overflow-hidden mt-4 shadow-[0_20px_60px_-15px_rgba(245,158,11,0.15)] ring-1 ring-black/5 isolate group">
+      <div class="absolute inset-0 z-0 bg-[#FFFBF0] overflow-hidden">
+        <div class="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full bg-gradient-to-b from-yellow-200 via-amber-200 to-transparent blur-[120px] opacity-60 animate-float-slow mix-blend-multiply"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-orange-200 via-yellow-100 to-amber-100 blur-[100px] opacity-50 animate-float-medium mix-blend-multiply"></div>
+        <div class="absolute top-[30%] left-[40%] w-[500px] h-[500px] rounded-full bg-yellow-200 blur-[80px] opacity-40 animate-float-slow mix-blend-overlay"></div>
+      </div>
+
+      <div class="absolute inset-0 flex flex-col lg:flex-row items-center justify-between px-8 sm:px-12 md:px-20 z-10 w-full h-full">
+        <div class="flex flex-col justify-center items-start max-w-2xl lg:max-w-xl z-20 pt-20 lg:pt-0">
+          <div class="animate-fade-in-up">
+            <div class="inline-flex items-center gap-2 bg-white/60 backdrop-blur-md border border-amber-200 rounded-full px-4 py-1.5 mb-8 shadow-sm">
+              <i data-lucide="target" class="w-3.5 h-3.5 text-amber-600 fill-current"></i>
+              <span class="text-xs font-medium text-amber-900 tracking-wide">
+                The 80/20 Web Agency
+              </span>
+            </div>
+          </div>
+          <h1 class="animate-fade-in-up delay-100 text-5xl sm:text-6xl md:text-[5rem] leading-[1.05] font-semibold text-gray-900 tracking-tighter mb-6">
+            Progress over
+            <span class="text-amber-500 relative inline-block">
+              perfection.
+              <span class="absolute inset-0 bg-amber-400/20 blur-xl -z-10 rounded-full"></span>
+            </span>
+          </h1>
+          <p class="animate-fade-in-up delay-200 text-lg sm:text-xl text-gray-700 leading-relaxed max-w-lg font-normal mb-10">
+            We build reliable, high-performing websites for SMBs. We focus on the crucial 20% of development that drives 80% of your business results—saving you time and money.
+          </p>
+          <div class="animate-fade-in-up delay-300">
+            <a href="#" class="group inline-flex items-center justify-between gap-4 bg-gray-900 text-white pl-6 pr-2 py-2 rounded-full font-medium text-base shadow-lg shadow-amber-900/10 transition-transform hover:scale-[1.02] hover:shadow-xl active:scale-[0.98]">
+              <span>See Our Work</span>
+              <div class="w-10 h-10 rounded-full bg-gray-800 group-hover:bg-amber-500 flex items-center justify-center transition-colors">
+                <i data-lucide="move-up-right" class="w-5 h-5 text-white"></i>
+              </div>
+            </a>
+          </div>
         </div>
-        <h1 class="text-6xl sm:text-8xl font-black uppercase tracking-tighter text-black leading-[0.9] animate-fade-in-up delay-100">
-          ELEVATE<br/>YOUR GAME
-        </h1>
-        <p class="mt-8 text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto font-medium animate-fade-in-up delay-200">
-          World-class instruction in Brazilian Jiu Jitsu, Boxing, and Kickboxing. A community dedicated to growth, discipline, and technical excellence.
-        </p>
-        <div class="mt-10 flex justify-center gap-4 animate-fade-in-up delay-300">
-          <a href="trial.html" class="bg-black text-white text-sm font-bold tracking-widest uppercase px-8 py-4 hover:bg-gray-800 transition-all">
-            Start Free Trial
-          </a>
-          <a href="#schedule" class="bg-white border-2 border-black text-black text-sm font-bold tracking-widest uppercase px-8 py-4 hover:bg-gray-50 transition-all">
-            View Schedule
-          </a>
+
+        <div class="hidden lg:flex w-1/2 h-full relative items-center justify-center [perspective:1600px] z-10">
+          <div class="relative w-[380px] h-[520px] animate-float-showcase group cursor-pointer [transform-style:preserve-3d]">
+            <div class="relative w-full h-full transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] [transform-style:preserve-3d] [transform:rotateY(-12deg)_rotateX(6deg)] group-hover:[transform:rotateY(0deg)_rotateX(0deg)_scale(1.02)]">
+              <div class="absolute inset-0 bg-gradient-to-br from-amber-200 via-orange-200 to-yellow-200 rounded-[32px] opacity-60 -z-10 [transform:translateZ(-50px)_translateX(20px)_translateY(20px)] border border-white/40 blur-[1px]"></div>
+              <div class="absolute inset-0 bg-white/80 backdrop-blur-2xl rounded-[32px] border border-white/60 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.15)] flex flex-col overflow-hidden [transform:translateZ(0px)]">
+                <div class="h-12 border-b border-gray-100 flex items-center justify-between px-5 bg-gray-50/50">
+                  <div class="flex gap-1.5">
+                    <div class="w-2.5 h-2.5 rounded-full bg-[#FF5F57] border border-black/5"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-[#FEBC2E] border border-black/5"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-[#28C840] border border-black/5"></div>
+                  </div>
+                  <div class="px-3 py-1 rounded-full bg-white border border-gray-200 text-[10px] font-medium text-gray-500 flex items-center gap-1.5 shadow-sm">
+                    <i data-lucide="webhook" class="w-2.5 h-2.5 text-amber-500"></i>
+                    api.sunnyside.co
+                  </div>
+                </div>
+                <div class="p-5 flex-1 flex flex-col">
+                  <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-gray-900 border border-gray-800 p-4 font-mono text-xs text-green-400">
+                    <p>POST /api/v1/webhook</p>
+                    <p class="text-gray-500">Connecting services...</p>
+                    <br>
+                    <p>{ </p>
+                    <p class="pl-4">"status": "success",</p>
+                    <p class="pl-4">"data": "Synced reliably"</p>
+                    <p>}</p>
+                  </div>
+                  <div class="mt-5 space-y-3">
+                    <div class="flex justify-between items-start">
+                      <div>
+                        <h3 class="text-lg font-semibold text-gray-900 leading-tight">Seamless Integrations</h3>
+                        <p class="text-sm text-gray-500 mt-1">APIs, Webhooks & iFrames</p>
+                      </div>
+                      <span class="text-sm font-semibold text-amber-600 bg-amber-50 px-2 py-1 rounded-lg">Active</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="absolute -left-10 bottom-24 bg-white/90 backdrop-blur-xl pl-3 pr-5 py-3 rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-gray-100 flex items-center gap-3 [transform:translateZ(40px)] transition-transform duration-500 group-hover:[transform:translateZ(60px)]">
+                <div class="w-9 h-9 rounded-full bg-green-50 flex items-center justify-center text-green-600 ring-4 ring-white">
+                  <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-xs font-bold text-gray-900">System Connected</span>
+                  <span class="text-[10px] text-gray-500">Data flowing perfectly</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <section class="w-full h-[50vh] sm:h-[60vh] bg-cover bg-center bg-no-repeat relative flex items-center justify-center" style="background-image: url('assets/images/bjj-crew.png'); background-color: #111;">
-    <div class="absolute inset-0 bg-black/50"></div>
-    <div class="relative z-10 text-center px-4">
-      <h2 class="text-white text-4xl sm:text-6xl font-black uppercase tracking-tighter drop-shadow-lg">One Team. One Family.</h2>
-    </div>
-  </section>
-
-  <section id="coaches" class="py-32 bg-gray-50">
-    <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-20">
-        <h2 class="text-4xl sm:text-5xl font-black uppercase tracking-tighter">Our Coaches</h2>
-        <p class="mt-4 text-gray-500 font-medium max-w-2xl mx-auto">Expert instruction across all disciplines. Hover over our world-class coaches to learn more.</p>
+    <div class="sm:mt-24 mt-16 pr-4 pl-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-transparent reveal-on-scroll">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-gray-900">
+            The Essentials, Executed Flawlessly
+          </h2>
+          <p class="text-lg text-gray-500 mt-3 font-normal leading-relaxed">
+            No bloat. Just the integrations and features your business actually needs to function.
+          </p>
+        </div>
       </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12">
+        <div class="group cursor-pointer reveal-on-scroll delay-100">
+          <div class="relative aspect-square bg-[#FFFBF0] rounded-[32px] overflow-hidden mb-6 p-10 flex flex-col items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 border border-amber-100">
+            <i data-lucide="webhook" class="w-24 h-24 text-amber-500 mb-4 transition-transform duration-500 group-hover:scale-110"></i>
+            <div class="absolute bottom-5 right-5 w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 shadow-sm transition-all duration-300 group-hover:bg-amber-500 group-hover:text-white group-hover:scale-110">
+              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-xl font-semibold text-gray-900 tracking-tight">API & Webhooks</h3>
+            <p class="text-sm font-normal text-gray-500">Connecting your site to CRMs, payment gateways, and external tools silently and securely.</p>
+          </div>
+        </div>
         
-        <div class="group relative overflow-hidden bg-gray-200 aspect-[3/4] border-[3px] border-transparent transition-all duration-300 hover:border-black hover:shadow-[0_0_25px_rgba(0,0,0,0.8)] cursor-pointer">
-          <img src="assets/images/kris-nini.png" alt="Kris Nini" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-black/85 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
-            <h3 class="text-white text-3xl font-black uppercase tracking-tight mb-2">Kris Nini</h3>
-            <p class="text-white font-bold uppercase tracking-widest text-sm mb-4">Founder</p>
-            <span class="bg-black text-white border border-white/30 text-xs font-bold uppercase tracking-widest px-4 py-2">Black Belt</span>
+        <div class="group cursor-pointer reveal-on-scroll delay-200">
+          <div class="relative aspect-square bg-[#FFFBF0] rounded-[32px] overflow-hidden mb-6 p-10 flex flex-col items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 border border-amber-100">
+            <i data-lucide="layout-template" class="w-24 h-24 text-amber-500 mb-4 transition-transform duration-500 group-hover:scale-110"></i>
+            <div class="absolute bottom-5 right-5 w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 shadow-sm transition-all duration-300 group-hover:bg-amber-500 group-hover:text-white group-hover:scale-110">
+              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Smart iFrames</h3>
+            <p class="text-sm font-normal text-gray-500">Embedding booking systems or social feeds without slowing down your core site speed.</p>
           </div>
         </div>
 
-        <div class="group relative overflow-hidden bg-gray-200 aspect-[3/4] border-[3px] border-transparent transition-all duration-300 hover:border-black hover:shadow-[0_0_25px_rgba(0,0,0,0.8)] cursor-pointer">
-          <img src="assets/images/will.png" alt="Will" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-black/85 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
-            <h3 class="text-white text-3xl font-black uppercase tracking-tight mb-2">Will</h3>
-            <p class="text-white font-bold uppercase tracking-widest text-sm mb-4">Jiu Jitsu & Judo</p>
-            <span class="bg-black text-white border border-white/30 text-xs font-bold uppercase tracking-widest px-4 py-2">Black Belt</span>
+        <div class="group cursor-pointer reveal-on-scroll delay-300">
+          <div class="relative aspect-square bg-[#FFFBF0] rounded-[32px] overflow-hidden mb-6 p-10 flex flex-col items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 border border-amber-100">
+            <i data-lucide="shield-check" class="w-24 h-24 text-amber-500 mb-4 transition-transform duration-500 group-hover:scale-110"></i>
+            <div class="absolute bottom-5 right-5 w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 shadow-sm transition-all duration-300 group-hover:bg-amber-500 group-hover:text-white group-hover:scale-110">
+              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+            </div>
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-xl font-semibold text-gray-900 tracking-tight">Rock-Solid Reliability</h3>
+            <p class="text-sm font-normal text-gray-500">Clean code structure that doesn't break when you need it most. 80% effort, 100% uptime.</p>
           </div>
         </div>
-
-        <div class="group relative overflow-hidden bg-gray-200 aspect-[3/4] border-[3px] border-transparent transition-all duration-300 hover:border-purple-600 hover:shadow-[0_0_25px_rgba(147,51,234,0.6)] cursor-pointer">
-          <img src="assets/images/dylan.png" alt="Dylan" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-black/85 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
-            <h3 class="text-white text-3xl font-black uppercase tracking-tight mb-2">Dylan</h3>
-            <p class="text-white font-bold uppercase tracking-widest text-sm mb-4">Jiu Jitsu Coach</p>
-            <span class="bg-purple-800 text-white border border-white/30 text-xs font-bold uppercase tracking-widest px-4 py-2">Purple Belt</span>
-          </div>
-        </div>
-
-        <div class="group relative overflow-hidden bg-gray-200 aspect-[3/4] border-[3px] border-transparent transition-all duration-300 hover:border-purple-600 hover:shadow-[0_0_25px_rgba(147,51,234,0.6)] cursor-pointer">
-          <img src="assets/images/vincent.png" alt="Vincent" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-black/85 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
-            <h3 class="text-white text-3xl font-black uppercase tracking-tight mb-2">Vincent</h3>
-            <p class="text-white font-bold uppercase tracking-widest text-sm mb-4">Boxing Coach</p>
-            <span class="bg-purple-800 text-white border border-white/30 text-xs font-bold uppercase tracking-widest px-4 py-2">Purple Belt</span>
-          </div>
-        </div>
-
-        <div class="group relative overflow-hidden bg-gray-200 aspect-[3/4] border-[3px] border-transparent transition-all duration-300 hover:border-blue-500 hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] cursor-pointer">
-          <img src="assets/images/angel.png" alt="Angel" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-black/85 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
-            <h3 class="text-white text-3xl font-black uppercase tracking-tight mb-2">Angel</h3>
-            <p class="text-white font-bold uppercase tracking-widest text-sm mb-4">Jiu Jitsu Coach</p>
-            <span class="bg-blue-600 text-white border border-white/30 text-xs font-bold uppercase tracking-widest px-4 py-2">Blue Belt</span>
-          </div>
-        </div>
-
-        <div class="group relative overflow-hidden bg-gray-200 aspect-[3/4] border-[3px] border-transparent transition-all duration-300 hover:border-red-600 hover:shadow-[0_0_25px_rgba(220,38,38,0.6)] cursor-pointer">
-          <img src="assets/images/nick-jennings.png" alt="Nick Jennings" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-black/85 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 text-center">
-            <h3 class="text-white text-3xl font-black uppercase tracking-tight mb-2">Nick Jennings</h3>
-            <p class="text-white font-bold uppercase tracking-widest text-sm mb-4">Striking Coach</p>
-            <span class="bg-red-600 text-white border border-white/30 text-xs font-bold uppercase tracking-widest px-4 py-2">Kickboxing</span>
-          </div>
-        </div>
-
       </div>
     </div>
-  </section>
 
-  <section id="schedule" class="py-32 bg-white border-t border-gray-200">
-    <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-20">
-        <h2 class="text-4xl sm:text-5xl font-black uppercase tracking-tighter">Class Schedule</h2>
-        <p class="mt-4 text-gray-500 font-medium">Find the perfect time to train. Classes available 7 days a week.</p>
+    <div class="mt-24 sm:mt-32 px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-on-scroll">
+        <div class="max-w-xl">
+          <h2 class="text-4xl md:text-5xl font-semibold tracking-tighter text-gray-900 leading-[1.05]">
+            Featured Projects
+          </h2>
+          <p class="text-lg text-gray-500 mt-4 font-normal leading-relaxed">
+            From multi-page academy platforms to highly animated single-page experiences.
+          </p>
+        </div>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-24">
-        
-        <div>
-          <h3 class="text-2xl font-black uppercase border-b-4 border-black pb-4 mb-8">Morning (AM)</h3>
-          <div class="space-y-8">
-            <div>
-              <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Wednesday</h4>
-              <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                <span class="font-bold text-lg">6:00AM – 7:00AM</span>
-                <span class="font-bold uppercase tracking-wider text-sm text-right">Fundamentals – No Gi</span>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 h-auto lg:h-[600px]">
+        <div class="lg:col-span-7 lg:h-full group overflow-hidden cursor-pointer h-[450px] rounded-[40px] relative reveal-on-scroll delay-100 bg-gray-900">
+          <div class="absolute inset-0 bg-black/40 z-10 transition-opacity duration-300 group-hover:bg-black/20"></div>
+          <div class="flex flex-col sm:p-12 pt-8 pr-8 pb-8 pl-8 absolute top-0 right-0 bottom-0 left-0 justify-end z-20">
+            <div class="transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
+              <div class="inline-flex items-center px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-medium tracking-wider uppercase mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                Multi-Page Platform
               </div>
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Saturday</h4>
-              <div class="space-y-2">
-                <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                  <span class="font-bold text-lg">9:00AM – 9:45AM</span>
-                  <span class="font-bold uppercase tracking-wider text-sm text-right">Kids Class</span>
-                </div>
-                <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                  <span class="font-bold text-lg">10:00AM – 11:00AM</span>
-                  <span class="font-bold uppercase tracking-wider text-sm text-right">Fundamentals – No Gi</span>
-                </div>
-                <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                  <span class="font-bold text-lg">11:00AM – 12:00PM</span>
-                  <span class="font-bold uppercase tracking-wider text-sm text-right">Kickboxing</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Sunday</h4>
-              <div class="space-y-2">
-                <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                  <span class="font-bold text-lg">8:30AM – 9:30AM</span>
-                  <span class="font-bold uppercase tracking-wider text-sm text-right">Boxing</span>
-                </div>
-                <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                  <span class="font-bold text-lg">10:00AM – 11:00AM</span>
-                  <span class="font-bold uppercase tracking-wider text-sm text-right">Fundamentals – Yes Gi</span>
-                </div>
-                <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                  <span class="font-bold text-lg">11:00AM – 12:00PM</span>
-                  <span class="font-bold uppercase tracking-wider text-sm text-right">Grappling Rounds</span>
-                </div>
+              <h3 class="text-4xl sm:text-6xl font-semibold text-white tracking-tighter mb-2">
+                Flight BJJ
+              </h3>
+              <div class="h-0 overflow-hidden group-hover:h-auto transition-all duration-500">
+                <p class="text-white/90 text-lg font-normal mt-2 max-w-md pt-2 opacity-0 group-hover:opacity-100 transition-opacity delay-200 duration-500">
+                  A comprehensive multi-page website built for a martial arts academy. Structured for conversions, class schedules, and seamless user navigation.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div>
-          <h3 class="text-2xl font-black uppercase border-b-4 border-black pb-4 mb-8">Evening (PM)</h3>
-          <div class="space-y-8">
-            <div>
-              <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Monday</h4>
-              <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                <span class="font-bold text-lg">6:00PM – 7:30PM</span>
-                <span class="font-bold uppercase tracking-wider text-sm text-right">BJJ – Yes Gi</span>
+        <div class="lg:col-span-5 flex flex-col gap-6 h-full">
+          <div class="relative flex-1 h-[300px] lg:h-auto group rounded-[40px] overflow-hidden cursor-pointer bg-amber-50 reveal-on-scroll delay-200 border border-amber-100">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+            <div class="flex flex-col pt-8 pr-8 pb-8 pl-8 absolute top-0 right-0 bottom-0 left-0 justify-end z-20">
+              <div>
+                <span class="text-white/90 text-sm font-medium tracking-wide uppercase">
+                  Animated Single-Page
+                </span>
+                <h3 class="text-3xl font-semibold text-white tracking-tight mt-1">
+                  Interactive RSVP
+                </h3>
+                <p class="text-white/80 text-sm mt-2 hidden group-hover:block transition-all">
+                  A beautiful, scrollable single-page event site featuring fluid animations and backend form integrations.
+                </p>
               </div>
             </div>
-            <div>
-              <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Tuesday</h4>
-              <div class="space-y-2">
-                <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                  <span class="font-bold text-lg">5:00PM – 5:45PM</span>
-                  <span class="font-bold uppercase tracking-wider text-sm text-right">Kids Class</span>
-                </div>
-                <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                  <span class="font-bold text-lg">6:00PM – 7:30PM</span>
-                  <span class="font-bold uppercase tracking-wider text-sm text-right">BJJ – No Gi</span>
-                </div>
+          </div>
+
+          <div class="relative flex-1 h-[300px] lg:h-auto group rounded-[40px] overflow-hidden cursor-pointer bg-gray-100 reveal-on-scroll delay-300">
+            <div class="flex flex-col pt-8 pr-8 pb-8 pl-8 absolute top-0 right-0 bottom-0 left-0 justify-between">
+              <div class="flex justify-end">
+                <span class="w-10 h-10 bg-white shadow-sm rounded-full flex items-center justify-center text-gray-900 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                  <i data-lucide="code-2" class="w-4 h-4"></i>
+                </span>
               </div>
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Wednesday</h4>
-              <div class="space-y-2">
-                <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                  <span class="font-bold text-lg">5:00PM – 6:00PM</span>
-                  <span class="font-bold uppercase tracking-wider text-sm text-right">Kickboxing</span>
-                </div>
-                <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                  <span class="font-bold text-lg">6:00PM – 7:30PM</span>
-                  <span class="font-bold uppercase tracking-wider text-sm text-right">BJJ – Yes Gi</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Thursday</h4>
-              <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                <span class="font-bold text-lg">6:00PM – 7:30PM</span>
-                <span class="font-bold uppercase tracking-wider text-sm text-right">BJJ – No Gi</span>
-              </div>
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Friday</h4>
-              <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                <span class="font-bold text-lg">6:00PM – 7:30PM</span>
-                <span class="font-bold uppercase tracking-wider text-sm text-right">Grappling Rounds</span>
-              </div>
-            </div>
-             <div>
-              <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Sunday</h4>
-              <div class="flex justify-between items-center bg-gray-50 p-4 border-l-4 border-black">
-                <span class="font-bold text-lg">12:00PM</span>
-                <span class="font-bold uppercase tracking-wider text-sm text-right">NDIS (By Appt)</span>
+              <div>
+                <h3 class="text-3xl font-semibold text-gray-900 tracking-tight">
+                  Your Next Project
+                </h3>
+                <p class="text-gray-600 text-sm mt-1 font-medium">
+                  Built on the 80/20 principle.
+                </p>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
-  </section>
 
-  <section class="py-32 bg-gray-50 border-t border-gray-200">
-    <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl sm:text-5xl font-black uppercase tracking-tighter">Membership Rates</h2>
-        <p class="mt-4 text-gray-500 font-medium">Transparent pricing. No hidden fees. 10% Family discounts available.</p>
-      </div>
-
-      <div class="grid lg:grid-cols-3 gap-8">
-        <div class="bg-white border-2 border-black p-8 relative flex flex-col">
-          <div class="absolute top-0 right-0 bg-black text-white text-xs font-bold uppercase tracking-widest px-4 py-2">
-            7-Day Free Trial
-          </div>
-          <h3 class="text-3xl font-black uppercase tracking-tight mb-2">Adults</h3>
-          <p class="text-gray-500 text-sm mb-8">Access to Fundamentals, Boxing, Kickboxing, and Sparring</p>
-          
-          <div class="space-y-6 flex-grow">
-            <div class="pb-6 border-b border-gray-100">
-              <div class="flex items-end gap-2 mb-1">
-                <span class="text-4xl font-black">$160</span>
-                <span class="text-gray-500 font-medium pb-1">/month</span>
-              </div>
-              <p class="text-sm text-gray-600">Unlimited Monthly Direct Debit<br/><span class="text-xs text-gray-400">*One-off $12 admin setup fee</span></p>
-            </div>
+    <div class="relative mt-24 sm:mt-32">
+      <div class="absolute -inset-1 bg-gradient-to-r from-amber-500/20 via-yellow-500/20 to-orange-500/20 rounded-[44px] sm:rounded-[64px] blur-2xl opacity-40"></div>
+      
+      <footer class="relative bg-[#0A0A0B] rounded-[40px] sm:rounded-[60px] overflow-hidden text-white shadow-2xl ring-1 ring-white/10 reveal-on-scroll">
+        <div class="px-8 py-16 sm:px-16 sm:py-24 relative z-10">
+          <div class="flex flex-col lg:flex-row justify-between gap-16 lg:gap-24">
             
-            <div class="pb-6 border-b border-gray-100">
-              <div class="flex justify-between items-center mb-1">
-                <span class="text-xl font-bold">10 Class Pass</span>
-                <span class="text-xl font-black">$200</span>
-              </div>
-              <p class="text-sm text-gray-600">Applicable to all classes (Expires in 2 months)</p>
+            <div class="max-w-sm">
+              <a href="#" class="text-2xl font-semibold tracking-tight text-white flex items-center gap-2 mb-6">
+                <i data-lucide="egg-fried" class="w-6 h-6 text-amber-500"></i>
+                Sunny Side Up Co.
+              </a>
+              <p class="text-gray-400 text-base leading-relaxed mb-8 font-normal">
+                Pragmatic, reliable web development for small to medium businesses. Proudly operating out of Melbourne, led by Jay.
+              </p>
             </div>
 
-            <div>
-              <div class="flex justify-between items-center mb-1">
-                <span class="text-xl font-bold">Casual Drop-in</span>
-                <span class="text-xl font-black">$25</span>
+            <div class="grid grid-cols-2 gap-10 flex-1">
+              <div>
+                <h4 class="font-medium text-white mb-6">Services</h4>
+                <ul class="space-y-4 text-sm text-gray-400 font-normal">
+                  <li><a href="#" class="hover:text-amber-400 transition-colors">Web Development</a></li>
+                  <li><a href="#" class="hover:text-amber-400 transition-colors">API Integrations</a></li>
+                  <li><a href="#" class="hover:text-amber-400 transition-colors">Performance Audits</a></li>
+                </ul>
               </div>
-              <p class="text-sm text-gray-600">Per visit ($15 for affiliate students)</p>
+              <div>
+                <h4 class="font-medium text-white mb-6">Agency</h4>
+                <ul class="space-y-4 text-sm text-gray-400 font-normal">
+                  <li><a href="#" class="hover:text-amber-400 transition-colors">About Us</a></li>
+                  <li><a href="#" class="hover:text-amber-400 transition-colors">Our Philosophy</a></li>
+                  <li><a href="#" class="hover:text-amber-400 transition-colors">Contact</a></li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <button class="mt-8 w-full bg-black text-white font-bold uppercase tracking-widest py-4 hover:bg-gray-800 transition-colors">
-            Start Free Trial
-          </button>
+          <div class="mt-20 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <p class="text-sm text-gray-500 font-normal">
+              © 2026 Sunny Side Up Co. All rights reserved.
+            </p>
+          </div>
         </div>
-
-        <div class="bg-white border border-gray-200 p-8 relative flex flex-col">
-          <div class="absolute top-0 right-0 bg-gray-100 text-gray-600 text-xs font-bold uppercase tracking-widest px-4 py-2">
-            1-Day Free Trial
-          </div>
-          <h3 class="text-3xl font-black uppercase tracking-tight mb-2">Kids</h3>
-          <p class="text-gray-500 text-sm mb-8">Build confidence, discipline, and learn something new</p>
-          
-          <div class="space-y-6 flex-grow">
-            <div class="pb-6 border-b border-gray-100">
-              <div class="flex items-end gap-2 mb-1">
-                <span class="text-4xl font-black">$250</span>
-                <span class="text-gray-500 font-medium pb-1">/term</span>
-              </div>
-              <p class="text-sm text-gray-600">2 classes per week upfront<br/><span class="text-xs text-green-600 font-bold">*Less than $12 per class</span></p>
-            </div>
-            
-            <div class="pb-6 border-b border-gray-100">
-               <div class="flex justify-between items-center mb-1">
-                <span class="text-xl font-bold">1 Class/Week</span>
-                <span class="text-xl font-black">$175</span>
-              </div>
-              <p class="text-sm text-gray-600">Upfront term payment</p>
-            </div>
-
-            <div>
-              <div class="flex justify-between items-center mb-1">
-                <span class="text-xl font-bold">Casual Drop-in</span>
-                <span class="text-xl font-black">$20</span>
-              </div>
-              <p class="text-sm text-gray-600">Per visit fee</p>
-            </div>
-          </div>
-
-          <button class="mt-8 w-full bg-white border-2 border-black text-black font-bold uppercase tracking-widest py-4 hover:bg-gray-50 transition-colors">
-            Enrol Child
-          </button>
-        </div>
-
-        <div class="bg-white border border-gray-200 p-8 flex flex-col">
-          <h3 class="text-3xl font-black uppercase tracking-tight mb-2">Specialised</h3>
-          <p class="text-gray-500 text-sm mb-8">Tailored coaching and inclusive programs</p>
-          
-          <div class="space-y-6 flex-grow">
-            <div class="pb-6 border-b border-gray-100">
-              <h4 class="text-xl font-bold mb-2">Private Lessons</h4>
-              <p class="text-sm text-gray-600 mb-2">1-on-1 or group training in BJJ, Judo, Boxing, or Kickboxing.</p>
-              <p class="text-sm font-bold uppercase tracking-wide">Please enquire for pricing</p>
-            </div>
-            
-            <div>
-              <h4 class="text-xl font-bold mb-2">NDIS Clients</h4>
-              <p class="text-sm text-gray-600 mb-2">We proudly offer programs suited for NDIS participants.</p>
-              <p class="text-sm font-bold uppercase tracking-wide">Enquire with Will or Angel</p>
-            </div>
-          </div>
-
-          <button class="mt-8 w-full bg-white border-2 border-black text-black font-bold uppercase tracking-widest py-4 hover:bg-gray-50 transition-colors">
-            Contact Us
-          </button>
-        </div>
-
-      </div>
+      </footer>
     </div>
-  </section>
+  </main>
 
-  <section class="py-24 bg-white border-t border-gray-200">
-    <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto text-center">
-        <img src="assets/images/AET.png" alt="Australian Elite Team Logo" class="h-32 sm:h-40 w-auto object-contain mx-auto mb-8">
-        <p class="text-lg sm:text-xl text-gray-600 font-medium leading-relaxed">
-          We are proudly affiliated with the <strong class="text-black font-bold">Australian Elite Team</strong>.
-        </p>
-        <p class="mt-6 text-base sm:text-lg text-gray-500">
-          The number one team in Australia and the Pan Pacific Region and currently ranked the number 11th team in the world under the International Brazilian Jiu Jitsu Federation (IBJJF) rankings.
-        </p>
-      </div>
-    </div>
-  </section>
+  <script>lucide.createIcons();</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
